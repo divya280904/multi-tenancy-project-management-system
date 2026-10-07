@@ -19,14 +19,14 @@ export default function AgencyLayout({ children }) {
   return (
     <ProtectedLayout allowedRoles={['AGENCY_ADMIN', 'AGENCY_TEAM']}>
       {isImpersonating && (
-        <div className="bg-red-600 text-white px-4 py-2 flex items-center justify-between text-sm font-medium shadow-md">
+        <div className="bg-red-600 text-white px-3 sm:px-4 py-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm font-medium shadow-md text-center sm:text-left">
           <div className="flex items-center gap-2">
-            <ShieldAlert size={18} />
+            <ShieldAlert size={18} className="flex-shrink-0" />
             <span>Support Mode: You are viewing this workspace as a Super Admin.</span>
           </div>
           <button
             onClick={exitImpersonation}
-            className="bg-white text-red-600 px-3 py-1 rounded hover:bg-red-50 transition-colors shadow-sm"
+            className="bg-white text-red-600 px-3 py-1.5 rounded hover:bg-red-50 transition-colors shadow-sm w-full sm:w-auto flex-shrink-0"
           >
             Exit Support Mode
           </button>
@@ -60,7 +60,7 @@ export default function AgencyLayout({ children }) {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-8 bg-gray-50 overflow-auto">
+        <div className="flex-1 p-4 md:p-8 bg-gray-50 overflow-auto w-full">
           {children}
         </div>
       </div>

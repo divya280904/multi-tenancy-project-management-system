@@ -41,7 +41,7 @@ export default function AdminLayout({ children }) {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-8 bg-gray-50 overflow-auto">
+        <div className="flex-1 p-4 md:p-8 bg-gray-50 overflow-auto w-full">
           {children}
         </div>
       </div>

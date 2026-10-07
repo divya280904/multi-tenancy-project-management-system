@@ -104,20 +104,20 @@ export default function AgencyClients() {
   return (
     <AgencyLayout>
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 space-y-4 md:space-y-0">
-        <h2 className="text-2xl font-bold">Clients</h2>
+        <h2 className="text-2xl font-bold w-full md:w-auto text-center md:text-left">Clients</h2>
         
-        <div className="flex space-x-4 w-full md:w-auto">
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
           <input
             type="text"
             placeholder="Search clients..."
             value={search}
             onChange={handleSearchChange}
-            className="p-2 border rounded-md w-full md:w-64"
+            className="p-2 border rounded-md w-full sm:w-64"
           />
           {user?.role === 'AGENCY_ADMIN' && !showAddForm && (
             <button
               onClick={openAddForm}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 whitespace-nowrap"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 whitespace-nowrap w-full sm:w-auto"
             >
               + New Client
             </button>
@@ -187,7 +187,7 @@ export default function AgencyClients() {
         </div>
       )}
 
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="bg-white rounded-lg shadow overflow-x-auto w-full">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
